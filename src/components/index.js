@@ -1,0 +1,1 @@
+export { BarraNavegadora } from "./layout/barra-navegadora"

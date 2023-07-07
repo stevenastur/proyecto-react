@@ -1,0 +1,1 @@
+export { BarraNavegadora } from "./barra-navegadora"
