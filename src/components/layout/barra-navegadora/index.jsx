@@ -9,8 +9,8 @@ const BarraNavegadora = () => {
           <Navbar.Brand href="/">Tienda</Navbar.Brand>
           <Nav className="me-auto">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/personajes">Personajes</NavLink>
-            <NavLink to="/carrito/:id">Carrito</NavLink>
+            <NavLink to="/vinos">Vinos</NavLink>
+            <NavLink to="/carrito">Carrito</NavLink>
           </Nav>
         </Container>
       </Navbar>

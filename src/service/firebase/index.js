@@ -1,2 +1,2 @@
-export { getPersonajes } from "./personajes"
+export { getVinos } from "./vinos"
 export { getCategorias, getCategoria } from "./categoria"

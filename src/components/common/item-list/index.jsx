@@ -12,4 +12,3 @@ const ItemList = ({ items }) => {
 };
 
 export { ItemList };
-

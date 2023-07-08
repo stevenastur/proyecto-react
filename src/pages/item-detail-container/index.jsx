@@ -3,11 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const ItemDetailContainter = ({
   id,
-  nombre,
-  historia,
-  genero,
-  estado,
-  ocupacion,
+  bodega,
+  marca,
+  cepa,
+  precio,
+  año,
+  corte,
 }) => {
   const params = useParams();
   const navigate = useNavigate();
@@ -15,16 +16,18 @@ const ItemDetailContainter = ({
   return (
     <Card key={id}>
       <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>{historia}</Card.Text>
-        <Card.Text>{genero}</Card.Text>
-        <Card.Text>{estado}</Card.Text>
-        <Card.Text>{ocupacion}</Card.Text>
+        <Card.Title>{bodega}</Card.Title>
+        <Card.Text>{marca}</Card.Text>
+        <Card.Text>{cepa}</Card.Text>
+        <Card.Text>{precio}</Card.Text>
+        <Card.Text>{año}</Card.Text>
+        <Card.Text>{corte}</Card.Text>
 
         <Button
-          variant="primary" onClick={() => navigate(`/personajes/id${params.id}`)}
+          variant="primary"
+          onClick={() => navigate(`/vinos/${params.id}`)}
         >
-          Ver personaje
+          Ver Vinos
         </Button>
       </Card.Body>
     </Card>

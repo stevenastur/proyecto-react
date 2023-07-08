@@ -1,24 +1,23 @@
 import { Container } from "react-bootstrap";
 import { ItemList } from "../../components/common";
 import { useEffect, useState } from "react";
-import { getPersonajes, getCategorias } from "../../service/firebase";
+import { getVinos, getCategorias } from "../../service/firebase";
 import { NavLink } from "react-router-dom";
 
 const ItemListContainter = () => {
-
-  const [personajes, setPersonajes] = useState([]);
+  const [vinos, setVinos] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getPersonajes().then((data) => {
+    getVinos().then((data) => {
       console.log(data);
-      setPersonajes(data);
+      setVinos(data);
     });
   }, []);
 
   useEffect(() => {
     getCategorias().then((data) => {
-      console.log(data)
+      console.log(data);
       setCategories(data);
     });
   }, []);
@@ -29,15 +28,15 @@ const ItemListContainter = () => {
         <div>
           <ul>
             {categories.map((category) => (
-              <li key={category.id} >
+              <li key={category.id}>
                 <NavLink to={`/category/${category.id}`}>
                   {category.nombre}
-                </NavLink>  
+                </NavLink>
               </li>
             ))}
           </ul>
         </div>
-        <ItemList items={personajes} />
+        <ItemList items={vinos} />
       </Container>
     </>
   );

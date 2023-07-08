@@ -2,39 +2,41 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
 import { ItemDetail } from "./components/common";
+import { PrintProvider } from "./context/print";
 
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { PrintProvider } from "./context/print";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyADjS_IVwnLK0vZLdFiP6EZI4dRnuAeoBw",
-  authDomain: "los-simpsons-30e44.firebaseapp.com",
-  projectId: "los-simpsons-30e44",
-  storageBucket: "los-simpsons-30e44.appspot.com",
-  messagingSenderId: "356201608005",
-  appId: "1:356201608005:web:6b88e64a93a5a0aa2dc42c",
+  apiKey: "AIzaSyApZURm_72iZgCku3zzbGbEkXUg8_oQCRw",
+  authDomain: "vinos-705de.firebaseapp.com",
+  projectId: "vinos-705de",
+  storageBucket: "vinos-705de.appspot.com",
+  messagingSenderId: "242057114399",
+  appId: "1:242057114399:web:b1a3550f33fc84970ab62a",
+  measurementId: "G-8MXRCTQHTN"
 };
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
 
+
 function App() {
   return (
     <div className="App">
-      
       <PrintProvider>
         <BrowserRouter>
           <BarraNavegadora />
           <Routes>
             <Route path="/" element={<ItemListContainter />} />
-            <Route path="/personajes" element={<ItemListContainter />} />
-            <Route path="/personajes/:id" element={<ItemDetail />} />
+            <Route path="/category/:catId" element={<ItemListContainter />} />
+            <Route path="/vinos/:id" element={<ItemDetail />} />
           </Routes>
         </BrowserRouter>
       </PrintProvider>
