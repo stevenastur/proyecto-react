@@ -1,2 +1,2 @@
 export { ItemListContainter } from "./item-list-container";
-export { ItemDetail } from "./item-detail";
+export { ItemDetailContainter } from "./item-detail-container";

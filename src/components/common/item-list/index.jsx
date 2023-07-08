@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
-import { ItemDetail } from "../../../pages";
+import { ItemDetail } from "../item-detail";
+
 
 const ItemList = ({ items }) => {
   return (

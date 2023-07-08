@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ItemListContainter } from "./pages";
+import { ItemDetailContainter, ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
-import { ItemDetailContainter } from "./components/common";
 import { PrintProvider } from "./context/print";
 
 
