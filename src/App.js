@@ -35,7 +35,8 @@ function App() {
           <BarraNavegadora />
           <Routes>
             <Route path="/" element={<ItemListContainter />} />
-            <Route path="/category/:catId" element={<ItemListContainter />} />
+            <Route path="/vinos" element={<ItemListContainter />} />
+            <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
             <Route path="/vinos/:id" element={<ItemDetail />} />
           </Routes>
         </BrowserRouter>

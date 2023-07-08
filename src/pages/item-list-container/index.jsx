@@ -2,18 +2,20 @@ import { Container } from "react-bootstrap";
 import { ItemList } from "../../components/common";
 import { useEffect, useState } from "react";
 import { getVinos, getCategorias } from "../../service/firebase";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const ItemListContainter = () => {
+  const { nombreBodega } = useParams();
+
   const [vinos, setVinos] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getVinos().then((data) => {
+    getVinos(nombreBodega).then((data) => {
       console.log(data);
       setVinos(data);
     });
-  }, []);
+  }, [nombreBodega]);
 
   useEffect(() => {
     getCategorias().then((data) => {
@@ -25,6 +27,7 @@ const ItemListContainter = () => {
   return (
     <>
       <Container>
+        {nombreBodega}
         <div>
           <ul>
             {categories.map((category) => (

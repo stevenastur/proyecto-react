@@ -1,11 +1,13 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
-const getVinos = async () => {
+const getVinos = async (bodegaFiltrada) => {
   const db = getFirestore();
 
   const colleccionRef = collection(db, "vinos");
 
-  const snapshot = await getDocs(colleccionRef);
+  const q = bodegaFiltrada ? query(colleccionRef, where("bodega", "==", bodegaFiltrada)) : colleccionRef;
+
+  const snapshot = await getDocs(q);
 
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
