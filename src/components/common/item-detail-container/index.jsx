@@ -1,7 +1,5 @@
-// import { Card } from 'react-bootstrap'
 
-
-const ItemDetail = ({  id,
+const ItemDetailContainter = ({  id,
   bodega,
   marca,
   cepa,
@@ -33,5 +31,7 @@ const ItemDetail = ({  id,
   )
 }
 
-export { ItemDetail }
+export { ItemDetailContainter };
+
+
 

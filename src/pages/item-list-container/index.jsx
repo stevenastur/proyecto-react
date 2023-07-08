@@ -12,14 +12,12 @@ const ItemListContainter = () => {
 
   useEffect(() => {
     getVinos(nombreBodega).then((data) => {
-      console.log(data);
       setVinos(data);
     });
   }, [nombreBodega]);
 
   useEffect(() => {
     getCategorias().then((data) => {
-      console.log(data);
       setCategories(data);
     });
   }, []);

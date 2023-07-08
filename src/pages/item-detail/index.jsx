@@ -1,7 +1,8 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 
-const ItemDetailContainter = ({
+
+const ItemDetail = ({
   id,
   bodega,
   marca,
@@ -34,4 +35,5 @@ const ItemDetailContainter = ({
   );
 };
 
-export { ItemDetailContainter };
+export { ItemDetail }
+

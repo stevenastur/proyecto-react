@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
-import { ItemDetail } from "./components/common";
+import { ItemDetailContainter } from "./components/common";
 import { PrintProvider } from "./context/print";
 
 
@@ -37,7 +37,7 @@ function App() {
             <Route path="/" element={<ItemListContainter />} />
             <Route path="/vinos" element={<ItemListContainter />} />
             <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
-            <Route path="/vinos/:id" element={<ItemDetail />} />
+            <Route path="/vinos/:id" element={<ItemDetailContainter />} />
           </Routes>
         </BrowserRouter>
       </PrintProvider>
