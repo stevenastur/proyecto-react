@@ -6,7 +6,7 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const ItemListContainter = () => {
   const { nombreBodega } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [vinos, setVinos] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -38,12 +38,13 @@ const ItemListContainter = () => {
             ))}
           </ul>
         </div>
-        <ItemList items={vinos.map(vino => ({
+        <ItemList
+          items={vinos.map((vino) => ({
             ...vino,
-            verProducto: () => navigate(`item-detail/${vino.id}`),
-            textButton: "Ver producto"
-          }
-        ))} />
+            verProducto: () => navigate(`/item-detail/${vino.id}`),
+            textButton: "Ver producto",
+          }))}
+        />
       </Container>
     </>
   );
