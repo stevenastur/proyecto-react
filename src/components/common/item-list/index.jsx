@@ -1,12 +1,14 @@
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { ItemDetailContainter } from "../../../pages";
 
 const ItemList = ({ items }) => {
   return (
     <Row>
-      {items.map((item) => {
-        return <ItemDetailContainter key={item.id} {...item}/>
-      })}
+      {items.map((item) => (
+        <Col key={item.id}>
+          <ItemDetailContainter {...item} />
+        </Col>
+      ))}
     </Row>
   );
 };

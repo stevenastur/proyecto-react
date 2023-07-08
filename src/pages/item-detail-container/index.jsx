@@ -16,12 +16,12 @@ const ItemDetailContainter = ({
   return (
     <Card key={id}>
       <Card.Body>
-        <Card.Title>{bodega}</Card.Title>
-        <Card.Text>{marca}</Card.Text>
-        <Card.Text>{cepa}</Card.Text>
-        <Card.Text>{precio}</Card.Text>
-        <Card.Text>{año}</Card.Text>
-        <Card.Text>{corte}</Card.Text>
+        <Card.Title>Bodega: {bodega}</Card.Title>
+        <Card.Text>Marca: {marca}</Card.Text>
+        <Card.Text>Cepa: {cepa}</Card.Text>
+        <Card.Text>$ {precio}</Card.Text>
+        <Card.Text>Año: {año}</Card.Text>
+        <Card.Text>Corte: {corte}</Card.Text>
 
         <Button
           variant="primary"
