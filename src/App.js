@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
+import { ItemDetail } from "./components/common";
 
 
 // Import the functions you need from the SDKs you need
@@ -32,7 +33,8 @@ function App() {
           <BarraNavegadora />
           <Routes>
             <Route path="/" element={<ItemListContainter />} />
-            <Route path="/personajes/id:" element={<ItemListContainter />} />
+            <Route path="/personajes" element={<ItemListContainter />} />
+            <Route path="/personajes/:id" element={<ItemDetail />} />
           </Routes>
         </BrowserRouter>
       </PrintProvider>

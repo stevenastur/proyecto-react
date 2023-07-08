@@ -1,9 +1,16 @@
-import { Card, Button} from 'react-bootstrap'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Card, Button } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ItemDetailContainter = ({id, nombre, historia, genero, estado, ocupacion}) => {
-  const params = useParams()
-  const navigate = useNavigate()
+const ItemDetailContainter = ({
+  id,
+  nombre,
+  historia,
+  genero,
+  estado,
+  ocupacion,
+}) => {
+  const params = useParams();
+  const navigate = useNavigate();
 
   return (
     <Card key={id}>
@@ -14,10 +21,14 @@ const ItemDetailContainter = ({id, nombre, historia, genero, estado, ocupacion})
         <Card.Text>{estado}</Card.Text>
         <Card.Text>{ocupacion}</Card.Text>
 
-        <Button variant="primary" onClick={() => navigate(`/personaje/${params.id}`) }>Ver personaje</Button>
+        <Button
+          variant="primary" onClick={() => navigate(`/personajes/id${params.id}`)}
+        >
+          Ver personaje
+        </Button>
       </Card.Body>
     </Card>
   );
 };
 
-export {ItemDetailContainter}
+export { ItemDetailContainter };
