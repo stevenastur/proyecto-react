@@ -1,7 +1,7 @@
 import { Card, Button} from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const ItemDetailContainter = (id, nombre, historia, genero, estado, ocupacion) => {
+const ItemDetailContainter = ({id, nombre, historia, genero, estado, ocupacion}) => {
   const params = useParams()
   const navigate = useNavigate()
 
