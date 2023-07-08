@@ -2,10 +2,11 @@ import { Container } from "react-bootstrap";
 import { ItemList } from "../../components/common";
 import { useEffect, useState } from "react";
 import { getVinos, getCategorias } from "../../service/firebase";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const ItemListContainter = () => {
   const { nombreBodega } = useParams();
+  const navigate = useNavigate()
 
   const [vinos, setVinos] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -37,7 +38,12 @@ const ItemListContainter = () => {
             ))}
           </ul>
         </div>
-        <ItemList items={vinos} />
+        <ItemList items={vinos.map(vino => ({
+            ...vino,
+            verProducto: () => navigate(`item-detail/${vino.id}`),
+            textButton: "Ver producto"
+          }
+        ))} />
       </Container>
     </>
   );

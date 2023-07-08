@@ -1,5 +1,6 @@
 
-const ItemDetailContainter = ({  id,
+
+const ItemDetailContainter = ({
   bodega,
   marca,
   cepa,
@@ -8,15 +9,16 @@ const ItemDetailContainter = ({  id,
   corte,
 }) => {
 
+
+
   return (
     <>
-    <h1>{id}</h1>
-    <h1>{bodega}</h1>
-    <h1>{marca}</h1>
-    <h1>{cepa}</h1>
-    <h1>{precio}</h1>
-    <h1>{año}</h1>
-    <h1>{corte}</h1>
+    <h1>Bodega:{bodega}</h1>
+    <h1>Marca: {marca}</h1>
+    <h1>Cepa: {cepa}</h1>
+    <h1>$ {precio}</h1>
+    <h1>Año: {año}</h1>
+    <h1>Corte: {corte}</h1>
     </>
 
     // <Card key={id}>
