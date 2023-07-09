@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ItemDetailContainter, ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
 import { PrintProvider } from "./context/print";
+import { CarritoCompras } from "./context/cart-context";
+import { Shoppingcart } from "./components/common/carrito";
 
 
 // Import the functions you need from the SDKs you need
@@ -30,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <PrintProvider>
+        <CarritoCompras>
         <BrowserRouter>
           <BarraNavegadora />
           <Routes>
@@ -37,8 +40,10 @@ function App() {
             <Route path="/vinos" element={<ItemListContainter />} />
             <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
             <Route path="/item-detail/:id" element={<ItemDetailContainter />} />
+            <Route path="/carrito" element={<Shoppingcart />} />
           </Routes>
         </BrowserRouter>
+        </CarritoCompras>
       </PrintProvider>
     </div>
   );
