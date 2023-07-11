@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext(null);
+const CartContext = createContext(null);
 
 const CarritoCompras = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
@@ -12,4 +12,4 @@ const CarritoCompras = ({ children }) => {
   );
 };
 
-export { CarritoCompras };
+export { CarritoCompras , CartContext };

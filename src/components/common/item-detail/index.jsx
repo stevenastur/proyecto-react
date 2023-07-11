@@ -1,4 +1,4 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 
 
@@ -23,13 +23,6 @@ const ItemDetail = ({
         <Card.Text>$ {precio}</Card.Text>
         <Card.Text>Año: {año}</Card.Text>
         <Card.Text>Corte: {corte}</Card.Text>
-
-        <Button
-          variant="primary"
-          onClick={() => navigate(`/vinos/${params.id}`)}
-        >
-          Ver Vinos
-        </Button>
       </Card.Body>
     </Card>
   );

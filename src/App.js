@@ -5,7 +5,6 @@ import { PrintProvider } from "./context/print";
 import { CarritoCompras } from "./context/cart-context";
 import { Shoppingcart } from "./components/common/carrito";
 
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,29 +19,27 @@ const firebaseConfig = {
   storageBucket: "vinos-705de.appspot.com",
   messagingSenderId: "242057114399",
   appId: "1:242057114399:web:b1a3550f33fc84970ab62a",
-  measurementId: "G-8MXRCTQHTN"
+  measurementId: "G-8MXRCTQHTN",
 };
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-
-
 
 function App() {
   return (
     <div className="App">
       <PrintProvider>
         <CarritoCompras>
-        <BrowserRouter>
-          <BarraNavegadora />
-          <Routes>
-            <Route path="/" element={<ItemListContainter />} />
-            <Route path="/vinos" element={<ItemListContainter />} />
-            <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
-            <Route path="/item-detail/:id" element={<ItemDetailContainter />} />
-            <Route path="/carrito" element={<Shoppingcart />} />
-          </Routes>
-        </BrowserRouter>
+          <BrowserRouter>
+            <BarraNavegadora />
+            <Routes>
+              <Route path="/" element={<ItemListContainter />} />
+              <Route path="/vinos" element={<ItemListContainter />} />
+              <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
+              <Route path="/item-detail/:id" element={<ItemDetailContainter />} />
+              <Route path="/carrito" element={<Shoppingcart />} />
+            </Routes>
+          </BrowserRouter>
         </CarritoCompras>
       </PrintProvider>
     </div>
