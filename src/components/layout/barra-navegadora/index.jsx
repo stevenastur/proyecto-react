@@ -15,8 +15,7 @@ const BarraNavegadora = () => {
         <Container>
           <Navbar.Brand href="/">Tienda</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/vinos">Vinos</Nav.Link>
+            <Nav.Link href="/">Vinos</Nav.Link>
             <Nav.Link href="/carrito">Carrito: <span className="cart-count">{quantity}</span> </Nav.Link>
 
 

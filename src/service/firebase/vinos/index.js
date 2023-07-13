@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const getVinos = async (bodegaFiltrada) => {
   const db = getFirestore();
@@ -13,4 +13,21 @@ const getVinos = async (bodegaFiltrada) => {
   
 };
 
-export { getVinos };
+const getVino = async (id) => {
+  const db = getFirestore();
+
+  const vinoRef = doc(db, "vinos", id);
+
+  const snapshot = await getDoc(vinoRef);
+
+  // if (snapshot.exists()) {
+
+  return { id: snapshot.id, ...snapshot.data() };
+
+  // } else {
+
+  //   throw new Error("No se encontró el producto");
+  // }
+};
+
+export { getVinos , getVino};

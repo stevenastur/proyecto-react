@@ -1,28 +1,20 @@
 import { Card } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 
 
-const ItemDetail = ({
-  id,
-  bodega,
-  marca,
-  cepa,
-  precio,
-  año,
-  corte,
-}) => {
-  const params = useParams();
-  const navigate = useNavigate();
+const ItemDetail = ({product}) => {
+  // const params = useParams();
+  // const navigate = useNavigate();
 
   return (
-    <Card key={id}>
+    <Card key={product.id}>
       <Card.Body>
-        <Card.Title>Bodega: {bodega}</Card.Title>
-        <Card.Text>Marca: {marca}</Card.Text>
-        <Card.Text>Cepa: {cepa}</Card.Text>
-        <Card.Text>$ {precio}</Card.Text>
-        <Card.Text>Año: {año}</Card.Text>
-        <Card.Text>Corte: {corte}</Card.Text>
+        <Card.Title>Bodega: {product.bodega}</Card.Title>
+        <Card.Text>Marca: {product.marca}</Card.Text>
+        <Card.Text>Cepa: {product.cepa}</Card.Text>
+        <Card.Text>$ {product.precio}</Card.Text>
+        <Card.Text>Año: {product.año}</Card.Text>
+        <Card.Text>Corte: {product.corte}</Card.Text>
       </Card.Body>
     </Card>
   );
