@@ -1,11 +1,11 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 
-const PrintContext = createContext()
+// const PrintContext = createContext()
 
-const PrintProvider = ({ children }) => {
-    return <PrintContext.Provider value={PrintContext}>
-        {children}
-    </PrintContext.Provider>
-}
+// const PrintProvider = ({ children }) => {
+//     return <PrintContext.Provider value={PrintContext}>
+//         {children}
+//     </PrintContext.Provider>
+// }
 
-export { PrintContext , PrintProvider } 
+// export { PrintContext , PrintProvider } 

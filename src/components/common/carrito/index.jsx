@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../../context/cart-context";
 import { Button } from "react-bootstrap";
-
 
 
 const Shoppingcart = () => {
@@ -20,8 +19,14 @@ const Shoppingcart = () => {
       <>
       <div>Items en el carrito: {quantity}</div>
       <div>Total: ${totalPrecio}</div>
-      <div>{cart}</div>
-      <Button onClick={() => console.log(cart)}>Checkout</Button>
+      <div>
+        {cart.map((item) => (
+          <div key={item.id}>
+            <span>{item.nombre}</span> - <span>{item.precio}</span>
+          </div>
+        ))}
+      </div>
+      <Button onClick={() => console.log(cart)}>Finalizar compra</Button>
   </>
 )
 };

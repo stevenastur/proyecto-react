@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ItemDetailContainter, ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
-import { PrintProvider } from "./context/print";
+// import { PrintProvider } from "./context/print";
 import { CarritoCompras } from "./context/cart-context";
 import { Shoppingcart } from "./components/common/carrito";
 
@@ -28,7 +28,7 @@ initializeApp(firebaseConfig);
 function App() {
   return (
     <div className="App">
-      <PrintProvider>
+      {/* <PrintProvider> */}
         <CarritoCompras>
           <BrowserRouter>
             <BarraNavegadora />
@@ -40,7 +40,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </CarritoCompras>
-      </PrintProvider>
+      {/* </PrintProvider> */}
     </div>
   );
 }
