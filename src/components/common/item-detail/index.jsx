@@ -1,52 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { CartContext } from "../../../context/cart-context";
 
+const ItemDetail = ({ product }) => {
+  const { addToCart, removerItem, quantityPerItem } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(0);
 
-const ItemDetail = ({product}) => {
-
-  const [cart, setCart] = useContext(CartContext);
-
-  
-  const addToCart = () => {
-    setCart((currItems) => {
-      const enCarrito = currItems.find((item) => item.id === product.id);
-      if (enCarrito) {
-        return currItems.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      } else {
-        return [...currItems, { id: product.id, quantity: 1, precio: product.precio }];
-      }
-    });
+  const onAdd = (value) => {
+    setQuantity(value);
+    addToCart(product);
   };
-
-  const removerItem = (id) => {
-    setCart((currItems) => {
-      if (currItems.find((item) => item.id === id)?.quantity === 1) {
-        return currItems.filter((item) => item.id !== id);
-      } else {
-        return currItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-    });
-  };
-
-  const getQuantityById = (id) => {
-    return cart.find((item) => item.id === id)?.quantity || 0;
-  };
-
-  const quantityPerItem = getQuantityById(product.id);
-
 
   return (
     <Card key={product.id}>
@@ -58,21 +21,20 @@ const ItemDetail = ({product}) => {
         <Card.Text>Año: {product.año}</Card.Text>
         <Card.Text>Corte: {product.corte}</Card.Text>
 
-        {quantityPerItem === 0 ? (
-            <Button onClick={addToCart}>Agregar al Carrito</Button>
-          ) : (
-            <Button onClick={addToCart}>+</Button>
-          )}
-          {quantityPerItem > 0 && <div>Cantidad: {quantityPerItem}</div>}
-
-          {quantityPerItem > 0 && (
+        {quantity === 0 ? (
+          <Button onClick={() => onAdd(1)}>Agregar al Carrito</Button>
+        ) : (
+          <>
             <Button onClick={() => removerItem(product.id)}>-</Button>
-          )}
-
+            <Button onClick={() => onAdd(quantity + 1)}>+</Button>
+          </>
+        )}
       </Card.Body>
     </Card>
   );
 };
 
-export { ItemDetail }
+export { ItemDetail };
+
+
 

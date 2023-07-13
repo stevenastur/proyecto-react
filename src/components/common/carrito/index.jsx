@@ -2,33 +2,35 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/cart-context";
 import { Button } from "react-bootstrap";
 
+const ShoppingCart = () => {
+  const { carrito, removerItem } = useContext(CartContext);
 
-const Shoppingcart = () => {
-  const [cart, setCart] = useContext(CartContext);
-
-  const quantity = cart.reduce((acc, curr) => {
-    return acc + curr.quantity;
-  }, 0);
-
-  const totalPrecio = cart.reduce(
-    (acc, curr) => acc + curr.quantity * curr.precio,
-   0
-   );
+  const quantity = carrito
+    ? carrito.reduce((acc, curr) => acc + curr.quantity, 0)
+    : 0;
+  const totalPrecio = carrito
+    ? carrito.reduce((acc, curr) => acc + curr.quantity * curr.precio, 0)
+    : 0;
 
   return (
-      <>
+    <>
       <div>Items en el carrito: {quantity}</div>
       <div>Total: ${totalPrecio}</div>
       <div>
-        {cart.map((item) => (
-          <div key={item.id}>
-            <span>{item.nombre}</span> - <span>{item.precio}</span>
-          </div>
-        ))}
+        {carrito &&
+          carrito.map((item) => (
+            <div key={item.id}>
+              <span>{item.nombre}</span> - <span>{item.precio}</span>
+            </div>
+          ))}
       </div>
-      <Button onClick={() => console.log(cart)}>Finalizar compra</Button>
-  </>
-)
+      <Button onClick={() => console.log(carrito)}>Finalizar compra</Button>
+
+      {quantity > 0 && (
+        <Button onClick={() => removerItem(carrito[0].id)}>-</Button>
+      )}
+    </>
+  );
 };
 
-export { Shoppingcart };
+export { ShoppingCart };

@@ -3,7 +3,7 @@ import { ItemDetailContainter, ItemListContainter } from "./pages";
 import { BarraNavegadora } from "./components/layout";
 // import { PrintProvider } from "./context/print";
 import { CarritoCompras } from "./context/cart-context";
-import { Shoppingcart } from "./components/common/carrito";
+import { ShoppingCart } from "./components/common/carrito";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -36,7 +36,7 @@ function App() {
               <Route path="/" element={<ItemListContainter />} />
               <Route path="/category/:nombreBodega" element={<ItemListContainter />} />
               <Route path="/item-detail/:id" element={<ItemDetailContainter />} />
-              <Route path="/carrito" element={<Shoppingcart />} />
+              <Route path="/carrito" element={<ShoppingCart />} />
             </Routes>
           </BrowserRouter>
         </CarritoCompras>
