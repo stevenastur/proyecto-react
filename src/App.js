@@ -26,6 +26,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 function App() {
+  
   return (
     <div className="App">
       {/* <PrintProvider> */}

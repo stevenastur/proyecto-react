@@ -17,26 +17,57 @@ const CarritoCompras = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "cart") {
+        const updatedCart = event.newValue ? JSON.parse(event.newValue) : [];
+        setCart(updatedCart);
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   const addToCart = (product) => {
     setCart((currentCart) => {
-      const newCart = [...currentCart, { ...product, quantity: 1 }];
-      return newCart;
+      const existItem = currentCart.find((item) => item.id === product.id);
+      if (existItem) {
+        const updatedCart = currentCart.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        });
+        return updatedCart;
+      } else {
+        const newCart = [...currentCart, { ...product, quantity: 1 }];
+        return newCart;
+      }
     });
   };
-  
 
-  const removerItem = (id) => {
+  const removerItem = (product) => {
     setCart((currentCart) => {
-      const itemIndex = currentCart.findIndex((item) => item.id === id);
-      if (itemIndex !== -1) {
-        const updatedCart = [...currentCart];
-        updatedCart.splice(itemIndex, 1);
-        return updatedCart;
+      const existItem = currentCart.find((item) => item.id === product.id);
+      if (existItem) {
+        const updatedCart = currentCart.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        });
+        return updatedCart.filter((item) => item.quantity > 0);
       }
       return currentCart;
     });
   };
-  
+
+
+
 
   const getQuantityById = (id) => {
     const item = cart.find((item) => item.id === id);

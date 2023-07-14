@@ -11,6 +11,11 @@ const ItemDetail = ({ product }) => {
     addToCart(product);
   };
 
+  const onLess = (value) => {
+    setQuantity(value);
+    removerItem(product);
+  };
+
   return (
     <Card key={product.id}>
       <Card.Body>
@@ -25,7 +30,8 @@ const ItemDetail = ({ product }) => {
           <Button onClick={() => onAdd(1)}>Agregar al Carrito</Button>
         ) : (
           <>
-            <Button onClick={() => removerItem(product.id)}>-</Button>
+            <Button onClick={() => onLess(quantity - 1)}>-</Button>
+            {quantity}
             <Button onClick={() => onAdd(quantity + 1)}>+</Button>
           </>
         )}
