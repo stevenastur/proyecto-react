@@ -1,8 +1,10 @@
-import { Container } from "react-bootstrap";
+import { Button, ButtonGroup, Container } from "react-bootstrap";
 import { ItemList } from "../../components/common";
 import { useEffect, useState } from "react";
 import { getVinos, getCategorias } from "../../service/firebase";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
+import './style.css';
+
 
 const ItemListContainter = () => {
   const { nombreBodega } = useParams();
@@ -26,18 +28,19 @@ const ItemListContainter = () => {
   return (
     <>
       <Container>
-        {nombreBodega}
-        <div>
-          <ul>
+        <h5>Filtros:</h5>
+        <div className="categoria">
+          <ButtonGroup aria-label="Basic example" >
             {categories.map((category) => (
-              <li key={category.id}>
+              <div key={category.id}>
                 <NavLink to={`/category/${category.id}`}>
-                  {category.nombre}
+                  <Button>{category.nombre}</Button>
                 </NavLink>
-              </li>
+              </div >
             ))}
-          </ul>
+          </ButtonGroup >
         </div>
+          {nombreBodega} 
         <ItemList
           items={vinos.map((vino) => ({
             ...vino,

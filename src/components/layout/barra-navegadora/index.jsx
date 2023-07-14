@@ -1,36 +1,3 @@
-// import { useContext } from "react";
-// import { Container, Nav, Navbar } from "react-bootstrap";
-// import { CartContext } from "../../../context/cart-context";
-
-// const BarraNavegadora = () => {
-//   const [cart, setCart] = useContext(CartContext);
-  
-
-//   const quantity = cart.reduce((acc, curr) => {
-//     return acc + curr.quantity;
-//   }, 0);
-  
-
-//   return (
-//     <>
-//       <Navbar bg="dark" data-bs-theme="dark">
-//         <Container>
-//           <Navbar.Brand href="/">Tienda</Navbar.Brand>
-//           <Nav>
-//             <Nav.Link href="/">Vinos</Nav.Link>
-//             <Nav.Link href="/carrito">
-//               Carrito: <span>{quantity}</span>{" "}
-//             </Nav.Link>
-//           </Nav>
-//         </Container>
-//       </Navbar>
-//     </>
-//   );
-// };
-
-// export { BarraNavegadora };
-
-
 import { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { CartContext } from "../../../context/cart-context";
