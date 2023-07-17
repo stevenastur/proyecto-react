@@ -76,6 +76,7 @@ const CarritoCompras = ({ children }) => {
 
   const contextValue = {
     cart,
+    setCart,
     addToCart,
     removerItem,
     getQuantityById,

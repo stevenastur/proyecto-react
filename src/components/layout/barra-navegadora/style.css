@@ -1,3 +1,17 @@
-.NavLink {
-  background-color: blue;
+.links {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.links:hover {
+  color: #fff;
+  background-color: #494949;
+  border-radius: 5px;
+}
+
+.links.active {
+  color: #9379cf;
+  font-weight: bold;
 }

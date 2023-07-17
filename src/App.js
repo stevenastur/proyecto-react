@@ -4,6 +4,7 @@ import { BarraNavegadora } from "./components/layout";
 // import { PrintProvider } from "./context/print";
 import { CarritoCompras } from "./context/cart-context";
 import { ShoppingCart } from "./components/common/carrito";
+import "./style.css"
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";

@@ -10,7 +10,7 @@ const Item = ({
   corte,
   verProducto,
   textButton,
-  imageUrl,
+  img,
 }) => {
 
 
@@ -18,7 +18,7 @@ const Item = ({
   return (
     <>
       <Card key={id}>
-        <Card.Img variant="top" src={imageUrl} />
+        <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{bodega}</Card.Title>
           <Card.Text> {marca}</Card.Text>
@@ -28,7 +28,7 @@ const Item = ({
           <Card.Text>{corte}</Card.Text>
           
 
-          <Button variant="primary" onClick={verProducto}>
+          <Button variant="secondary" onClick={verProducto}>
             {textButton}
           </Button>
           

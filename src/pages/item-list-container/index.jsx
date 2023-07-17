@@ -28,19 +28,18 @@ const ItemListContainter = () => {
   return (
     <>
       <Container>
-        <h5>Filtros:</h5>
+        <h5 className="filtro">Filtros:</h5>
         <div className="categoria">
           <ButtonGroup aria-label="Basic example" >
             {categories.map((category) => (
               <div key={category.id}>
                 <NavLink to={`/category/${category.id}`}>
-                  <Button>{category.nombre}</Button>
+                  <Button className="boton" variant="secondary">{category.nombre}</Button>
                 </NavLink>
               </div >
             ))}
           </ButtonGroup >
         </div>
-          {nombreBodega} 
         <ItemList
           items={vinos.map((vino) => ({
             ...vino,

@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { CartContext } from "../../../context/cart-context";
+import { NavLink } from "react-router-dom";
+import "./style.css"
 
 const BarraNavegadora = () => {
   const { cart } = useContext(CartContext);
@@ -13,10 +15,10 @@ const BarraNavegadora = () => {
         <Container>
           <Navbar.Brand href="/">Tienda</Navbar.Brand>
           <Nav>
-            <Nav.Link href="/">Vinos</Nav.Link>
-            <Nav.Link href="/carrito">
+            <NavLink className="links" to="/">Vinos</NavLink>
+            <NavLink className="links" to="/carrito">
               Carrito: <span>{quantity}</span>{" "}
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Container>
       </Navbar>

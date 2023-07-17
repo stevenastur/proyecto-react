@@ -2,3 +2,24 @@
   margin-bottom: 10px;
 }
 
+.contenedor{
+  display: flex;
+}
+
+.filtro{
+  color: white;
+}
+
+.boton{
+  margin: 0 5px;
+}
+
+.boton:hover {
+  color: #fff;
+  background-color: #494949;
+}
+
+.boton.active {
+  color: #9379cf;
+  font-weight: bold;
+}
